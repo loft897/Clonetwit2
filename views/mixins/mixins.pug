@@ -1,0 +1,8 @@
+mixin createPostForm(userLoggedIn)
+    .postFormContainer 
+        .userImageContainer 
+            img(src=userLoggedIn.profilePic, alt="User's profile picture")
+        .textAreaContainer 
+            textarea#postTextArea(placeholder="Quoi de neuf? Partage avec nous!") 
+            .buttonsContainer
+                button#submitPostButton Publier

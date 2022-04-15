@@ -4,7 +4,9 @@ block content
     .loginContainer 
         h2 Connectez-vous! 
         form(method="post") 
-            input(type="text", name="logUsername", placeholder="nom d'utilisateur ou email", required="")
-            input(type="password", name="password", placeholder="mot de passe", required="")
+
+            p.errorMessage #{errorMessage}
+            input(type="text", name="logUsername", placeholder="nom d'utilisateur ou email", value=logUsername, required="")
+            input(type="password", name="logPassword", placeholder="mot de passe", required="")
             input(type="submit", value="Connexion")
         a(href="/register") Pas encore inscrtit(e)? Créez un compte ici

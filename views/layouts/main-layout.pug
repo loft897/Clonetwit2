@@ -1,3 +1,6 @@
+include ../mixins/mixins
+
+
 doctype html
 html(lang="fr")
     head
@@ -6,9 +9,43 @@ html(lang="fr")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         link(rel='stylesheet', href='https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css', integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T', crossorigin='anonymous')
 
+        script(src='https://kit.fontawesome.com/159378f4f8.js', crossorigin='anonymous')
+
+
+        link(rel="stylesheet", href="/css/style.css")
+
         title #{pageTitle}
     body
-        block content
+        .wrapper 
+            .row 
+                nav.col-2
+                    a.text-primary(href="/")
+                        i.fab.fa-twitter
+                    a(href="/")
+                        i.fas.fa-home
+                    a(href="/search")
+                        i.fas.fa-search
+                    a(href="/notifications")
+                        i.fas.fa-bell
+                    a(href="/messages")
+                        i.fas.fa-envelope
+                    a(href="/profile")
+                        i.fas.fa-user
+                    a(href="/logout")
+                        i.fas.fa-sign-out-alt
+                .mainSectionContainer.col-10.col-md-8
+                    .titleContainer 
+                        h1 #{pageTitle}
+                    block content
+                    // span main section
+
+                .d-none.d-md-block.col-md-2
+                    span third column
+
+
+
+
+
 
     
     script(src='https://code.jquery.com/jquery-3.6.0.min.js', integrity='sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=', crossorigin='anonymous')
