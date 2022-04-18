@@ -12,7 +12,7 @@ class Databse {
     connect(){
 
         mongoose.connect(
-            "mongodb+srv://slz987:Tatamebe123@twitterclonecluster.ufrex.mongodb.net/TwitterCloneDB?retryWrites=true&w=majority"
+            "mongodb+srv://user:password@twitterclonecluster.ufrex.mongodb.net/TwitterCloneDB?retryWrites=true&w=majority"
           )
           .then(() => {
             console.log("Connexion à la DB reussie");
