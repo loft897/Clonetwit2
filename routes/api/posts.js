@@ -7,7 +7,14 @@ const Post = require("../../schemas/PostSchema");
 
 app.use(bodyParser.urlencoded({ extended: false })); // configuration du parsing (analyse de corps)
 
-router.get("/", (req, res, next) => {});
+router.get("/", (req, res, next) => { // recuperation de toutes les publications presentes dans le serveur 
+    Post.find()
+    .then(results => res.status(200).send(results))
+    .catch(error => {
+        console.log(error);
+        res.sendStatus(400)
+    })
+});
 
 router.post("/", async (req, res, next) => {
   if (!req.body.content) {
@@ -17,7 +24,7 @@ router.post("/", async (req, res, next) => {
 
   let postData = {
     content: req.body.content,
-    postedBy: req.session.user.Id
+    postedBy: req.session.user
   };
 
 
@@ -33,5 +40,7 @@ router.post("/", async (req, res, next) => {
 
  // res.status(200).send("ça fonctionne!");
 });
+
+
 
 module.exports = router;

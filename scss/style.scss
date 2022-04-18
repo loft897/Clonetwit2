@@ -6,6 +6,8 @@
   --blueligth: #98d1f9;
   --buttonHoverBG: #92cbf4;
   --lightgrey: rgb(230, 236, 240);
+  --greyText: rgb(101, 139, 134);
+  --greyButtonText: rgba(0,0,0,0.34);
   --spacing: 15px;
 }
 
@@ -82,6 +84,64 @@ nav {
           border: none;
           resize: none;
           font-size: 19px;
+      }
+  }
+
+  .postsContainer{
+      .post{
+          display: flex;
+          flex-direction: column;
+          padding: var(--spacing);
+          cursor: pointer;
+          border-bottom: 2px solid lightgray;
+          flex-shrink: 0;
+          .mainContentContainer{
+              flex: 1;
+              display: flex;
+              .postContentContainer{
+                  padding-left: var(--spacing);
+                  display: flex;
+                  flex-direction: column;
+                  flex: 1;
+                  .header{
+                      a{
+                          &:hover{
+                              text-decoration: underline;
+                          }
+                      }
+                      a, span{
+                          padding-right: 5px;
+                      }
+                      .displayName{
+                          font-weight: bold;
+                      }
+                      .username, .date{
+                          color: var(--greyText)
+                      }
+                  }
+
+                  .postFooter{
+                      display: flex;
+                      align-items: center;
+                      .postButtonContainer{
+                          flex: 1;
+                          display: flex;
+                          button{
+                              &:hover{
+                                  background-color: #d4edff;
+                                  border-radius: 50px;
+                              }
+                              padding: 0 5px;
+                              border: none;
+                              outline: none;
+                              color: var(--greyButtonText);
+                              background-color: transparent;
+                              font-size: 20px;
+                          }
+                      }
+                  }
+              }
+          }
       }
   }
 }

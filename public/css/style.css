@@ -6,6 +6,8 @@
   --blueligth: #98d1f9;
   --buttonHoverBG: #92cbf4;
   --lightgrey: rgb(230, 236, 240);
+  --greyText: rgb(101, 139, 134);
+  --greyButtonText: rgba(0,0,0,0.34);
   --spacing: 15px;
 }
 
@@ -84,6 +86,56 @@ nav a:hover {
   border: none;
   resize: none;
   font-size: 19px;
+}
+.mainSectionContainer .postsContainer .post {
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing);
+  cursor: pointer;
+  border-bottom: 2px solid lightgray;
+  flex-shrink: 0;
+}
+.mainSectionContainer .postsContainer .post .mainContentContainer {
+  flex: 1;
+  display: flex;
+}
+.mainSectionContainer .postsContainer .post .mainContentContainer .postContentContainer {
+  padding-left: var(--spacing);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.mainSectionContainer .postsContainer .post .mainContentContainer .postContentContainer .header a:hover {
+  text-decoration: underline;
+}
+.mainSectionContainer .postsContainer .post .mainContentContainer .postContentContainer .header a, .mainSectionContainer .postsContainer .post .mainContentContainer .postContentContainer .header span {
+  padding-right: 5px;
+}
+.mainSectionContainer .postsContainer .post .mainContentContainer .postContentContainer .header .displayName {
+  font-weight: bold;
+}
+.mainSectionContainer .postsContainer .post .mainContentContainer .postContentContainer .header .username, .mainSectionContainer .postsContainer .post .mainContentContainer .postContentContainer .header .date {
+  color: var(--greyText);
+}
+.mainSectionContainer .postsContainer .post .mainContentContainer .postContentContainer .postFooter {
+  display: flex;
+  align-items: center;
+}
+.mainSectionContainer .postsContainer .post .mainContentContainer .postContentContainer .postFooter .postButtonContainer {
+  flex: 1;
+  display: flex;
+}
+.mainSectionContainer .postsContainer .post .mainContentContainer .postContentContainer .postFooter .postButtonContainer button {
+  padding: 0 5px;
+  border: none;
+  outline: none;
+  color: var(--greyButtonText);
+  background-color: transparent;
+  font-size: 20px;
+}
+.mainSectionContainer .postsContainer .post .mainContentContainer .postContentContainer .postFooter .postButtonContainer button:hover {
+  background-color: #d4edff;
+  border-radius: 50px;
 }
 
 #submitPostButton {
